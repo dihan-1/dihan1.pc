@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dihan1.pc - Premium Laptops & PC Parts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0e1e2b',
+                        lenovo: '#e60012',
+                        asus: '#00539b',
+                        razer: '#44d62c',
+                        hp: '#0096d6',
+                        dell: '#007db8',
+                        alienware: '#00a3e0',
+                        msi: '#ff0000',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-in': 'slideIn 0.5s ease-in-out',
+                        'pulse-slow': 'pulse 3s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+        }
+
+        .swiper {
+            width: 100%;
+            height: 500px;
+        }
+
+        .swiper-slide {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .swiper-slide:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-card .add-to-cart-btn {
+            position: relative;
+            z-index: 10;
+        }
+
+        .product-card.lenovo-hover:hover {
+            background: linear-gradient(135deg, rgba(230, 0, 18, 0.1) 0%, rgba(230, 0, 18, 0.05) 100%);
+            box-shadow: 0 10px 30px rgba(230, 0, 18, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .product-card.asus-hover:hover {
+            background: linear-gradient(135deg, rgba(0, 83, 155, 0.1) 0%, rgba(0, 83, 155, 0.05) 100%);
+            box-shadow: 0 10px 30px rgba(0, 83, 155, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .product-card.razer-hover:hover {
+            background: linear-gradient(135deg, rgba(68, 214, 44, 0.1) 0%, rgba(68, 214, 44, 0.05) 100%);
+            box-shadow: 0 10px 30px rgba(68, 214, 44, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .product-card.hp-hover:hover {
+            background: linear-gradient(135deg, rgba(0, 150, 214, 0.1) 0%, rgba(0, 150, 214, 0.05) 100%);
+            box-shadow: 0 10px 30px rgba(0, 150, 214, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .product-card.dell-hover:hover {
+            background: linear-gradient(135deg, rgba(0, 125, 184, 0.1) 0%, rgba(0, 125, 184, 0.05) 100%);
+            box-shadow: 0 10px 30px rgba(0, 125, 184, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .product-card.alienware-hover:hover {
+            background: linear-gradient(135deg, rgba(0, 163, 224, 0.1) 0%, rgba(0, 163, 224, 0.05) 100%);
+            box-shadow: 0 10px 30px rgba(0, 163, 224, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .product-card.msi-hover:hover {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.1) 0%, rgba(255, 0, 0, 0.05) 100%);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .specs-popup {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            background: rgba(14, 30, 43, 0.95);
+            color: white;
+            padding: 1rem;
+            transition: bottom 0.3s ease;
+            z-index: 5;
+            max-height: calc(100% - 60px); /* Leave space for the button */
+            overflow-y: auto;
+        }
+
+        .product-card:hover .specs-popup {
+            bottom: 0;
+        }
+
+        .cart-panel {
+            transform: translateX(100%);
+            transition: transform 0.5s ease;
+        }
+
+        .cart-panel.open {
+            transform: translateX(0);
+        }
+
+        .page-transition {
+            transition: background-color 0.5s ease;
+        }
+
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #e60012;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .category-tab {
+            transition: all 0.3s ease;
+        }
+
+        .category-tab.active {
+            background-color: #0e1e2b;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(14, 30, 43, 0.2);
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            z-index: 5;
+            transform: rotate(5deg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #e60012, #00539b, #44d62c, #0096d6);
+            z-index: 1000;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: -300px;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: right 0.5s ease;
+            max-width: 300px;
+        }
+
+        .notification.show {
+            right: 20px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .search-results {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .search-results.show {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+    
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span id="notificationMessage">Item added to cart!</span>
+            </div>
+            <button onclick="closeNotification()" class="text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-4">
+                    <!-- Laptop/Computer Icon -->
+                    <div class="text-primary">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="60"
+                            height="50"
+                            viewBox="0 0 120 100"
+                            fill="none"
+                            class="w-12 h-10"
+                        >
+                            <path
+                                d="M100 70H20V25C20 22.2386 22.2386 20 25 20H95C97.7614 20 100 22.2386 100 25V70Z"
+                                stroke="#0e1e2b"
+                                stroke-width="8"
+                                fill="none"
+                            />
+                            <path
+                                d="M110 85H10C7.23858 85 5 82.7614 5 80V75C5 72.2386 7.23858 70 10 70H110C112.761 70 115 72.2386 115 75V80C115 82.7614 112.761 85 110 85Z"
+                                fill="#0e1e2b"
+                            />
+                            <rect x="45" y="75" width="30" height="5" fill="white" />
+                        </svg>
+                    </div>
+
+                    <!-- Text Part -->
+                    <div class="flex flex-col">
+                        <h1 class="text-primary text-2xl font-bold tracking-tight">Dihan1.pc</h1>
+                        <p class="text-primary text-xs tracking-widest font-medium">COMPUTERS</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="nav-link text-primary font-medium hover:text-gray-800 transition-colors duration-300" data-page="home">Home</a>
+                    <a href="#laptops" class="nav-link text-primary font-medium hover:text-gray-800 transition-colors duration-300" data-page="laptops">Laptops</a>
+                    <a href="#components" class="nav-link text-primary font-medium hover:text-gray-800 transition-colors duration-300" data-page="components">Components</a>
+                    <a href="#deals" class="nav-link text-primary font-medium hover:text-gray-800 transition-colors duration-300" data-page="deals">Deals</a>
+                    <a href="#support" class="nav-link text-primary font-medium hover:text-gray-800 transition-colors duration-300" data-page="support">Support</a>
+                </nav>
+
+                <!-- Search and Cart -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <input type="text" id="searchInput" placeholder="Search products..." class="py-2 px-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent w-40 md:w-64 transition-all duration-300">
+                        <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-primary transition-colors duration-300">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <div id="searchResults" class="search-results absolute top-full left-0 w-full mt-2 bg-white rounded-lg shadow-lg z-50 overflow-hidden">
+                            <div class="p-4" id="searchResultsContent">
+                                <!-- Search results will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <button id="cartButton" class="text-primary hover:text-gray-800 transition-colors duration-300 relative">
+                            <i class="fas fa-shopping-cart text-xl"></i>
+                            <span id="cartCount" class="badge">0</span>
+                        </button>
+                    </div>
+                    <button class="md:hidden text-primary hover:text-gray-800 transition-colors duration-300">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Panel -->
+    <div id="cartPanel" class="cart-panel fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-2xl z-50 flex flex-col">
+        <div class="p-6 bg-primary text-white flex justify-between items-center">
+            <h2 class="text-xl font-bold">Your Cart</h2>
+            <button id="closeCartButton" class="text-white hover:text-gray-300 transition-colors duration-300">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+        <div class="flex-1 overflow-y-auto p-6" id="cartItems">
+            <!-- Cart items will be populated here -->
+            <div class="text-center text-gray-500 py-10">
+                <i class="fas fa-shopping-cart text-5xl mb-4 opacity-30"></i>
+                <p>Your cart is empty</p>
+                <p class="text-sm mt-2">Add some products to your cart</p>
+            </div>
+        </div>
+        <div class="p-6 border-t border-gray-200">
+            <div class="mb-4">
+                <div class="flex justify-between mb-2">
+                    <span class="text-gray-600">Subtotal</span>
+                    <span class="font-medium" id="cartSubtotal">$0.00</span>
+                </div>
+                <div class="flex justify-between mb-2">
+                    <span class="text-gray-600">Shipping</span>
+                    <span class="font-medium" id="cartShipping">$0.00</span>
+                </div>
+                <div class="flex justify-between mb-4">
+                    <span class="text-gray-600">Discount</span>
+                    <span class="font-medium text-green-500" id="cartDiscount">-$0.00</span>
+                </div>
+                <div class="flex justify-between font-bold text-lg">
+                    <span>Total</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="flex">
+                    <input type="text" id="couponCode" placeholder="Enter coupon code" class="flex-1 py-2 px-4 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <button id="applyCoupon" class="bg-primary text-white py-2 px-4 rounded-r-lg hover:bg-opacity-90 transition-colors duration-300">Apply</button>
+                </div>
+                <div id="couponMessage" class="text-sm mt-1 hidden"></div>
+            </div>
+            <button class="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors duration-300 flex items-center justify-center">
+                <i class="fas fa-credit-card mr-2"></i>
+                Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section with Slider -->
+    <section class="relative">
+        <div class="swiper heroSwiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Gaming Laptop">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent flex items-center">
+                        <div class="container mx-auto px-6 md:px-12">
+                            <div class="max-w-lg">
+                                <h2 class="text-white text-3xl md:text-5xl font-bold mb-4">Next-Gen Gaming Laptops</h2>
+                                <p class="text-gray-200 mb-6">Experience unparalleled performance with the latest gaming technology.</p>
+                                <button class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors duration-300 flex items-center">
+                                    Shop Now
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Premium Ultrabooks">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent flex items-center">
+                        <div class="container mx-auto px-6 md:px-12">
+                            <div class="max-w-lg">
+                                <h2 class="text-white text-3xl md:text-5xl font-bold mb-4">Ultra-Thin, Ultra-Powerful</h2>
+                                <p class="text-gray-200 mb-6">Premium ultrabooks designed for professionals and creators.</p>
+                                <button class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors duration-300 flex items-center">
+                                    Explore Collection
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1591405351990-4726e331f141?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="PC Components">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent flex items-center">
+                        <div class="container mx-auto px-6 md:px-12">
+                            <div class="max-w-lg">
+                                <h2 class="text-white text-3xl md:text-5xl font-bold mb-4">Build Your Dream PC</h2>
+                                <p class="text-gray-200 mb-6">Premium components for custom PC builds with expert guidance.</p>
+                                <button class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors duration-300 flex items-center">
+                                    View Components
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next text-white"></div>
+            <div class="swiper-button-prev text-white"></div>
+        </div>
+    </section>
+
+    <!-- Featured Brands -->
+    <section class="py-12 bg-gradient-to-r from-gray-50 to-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-primary">Featured Brands</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-items-center">
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-full max-w-[150px] h-20 flex items-center justify-center">
+                    <img src="https://logos-world.net/wp-content/uploads/2022/07/Lenovo-Logo.png" alt="Lenovo" class="h-10 object-contain">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-full max-w-[150px] h-20 flex items-center justify-center">
+                    <img src="https://logos-world.net/wp-content/uploads/2020/07/Asus-Logo.png" alt="Asus" class="h-10 object-contain">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-full max-w-[150px] h-20 flex items-center justify-center">
+                    <img src="https://logos-world.net/wp-content/uploads/2020/11/Razer-Logo.png" alt="Razer" class="h-10 object-contain">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-full max-w-[150px] h-20 flex items-center justify-center">
+                    <img src="https://logos-world.net/wp-content/uploads/2020/11/HP-Logo.png" alt="HP" class="h-10 object-contain">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-full max-w-[150px] h-20 flex items-center justify-center">
+                    <img src="https://logos-world.net/wp-content/uploads/2020/08/Dell-Logo.png" alt="Dell" class="h-10 object-contain">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-full max-w-[150px] h-20 flex items-center justify-center">
+                    <img src="https://images.seeklogo.com/logo-png/18/1/alienware-logo-png_seeklogo-183546.png" alt="Alienware" class="h-10 object-contain">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-full max-w-[150px] h-20 flex items-center justify-center">
+                    <img src="https://logos-world.net/wp-content/uploads/2020/11/MSI-Logo.png" alt="MSI" class="h-10 object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="py-12 bg-gradient-to-br from-primary/5 to-primary/10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-2 text-primary">Special Offers</h2>
+            <p class="text-center text-gray-600 mb-8">Limited time deals on premium laptops</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Offer 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative">
+                        <img src="https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/Lenovo-Legion-Pro-7i-gaming-laptop-RTX-4090-Core-i9.jpg">
+                        <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 m-2 rounded-full font-bold text-sm">
+                            SAVE 15%
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-primary">Lenovo Legion Pro 7i (2025)</h3>
+                        <p class="text-gray-600 mb-4">Intel Core i9-14900HX, RTX 4090, 32GB RAM, 2TB SSD</p>
+                        <div class="flex justify-between items-center relative">
+                            <div>
+                                <span class="text-gray-400 line-through">$2,999.99</span>
+                                <span class="text-2xl font-bold text-primary ml-2">$2,549.99</span>
+                            </div>
+                            <button class="add-to-cart-btn bg-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors duration-300" 
+                                    data-id="legion-pro-7i" 
+                                    data-name="Lenovo Legion Pro 7i (2025)" 
+                                    data-price="2549.99" 
+                                    data-image="https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/Lenovo-Legion-Pro-7i-gaming-laptop-RTX-4090-Core-i9.jpg"
+                                    data-brand="lenovo">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Offer 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative">
+                        <img src="https://www.azernews.az/media/2024/02/29/1704422071559.jpg">
+                        <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 m-2 rounded-full font-bold text-sm">
+                            SAVE 20%
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-primary">ASUS ROG Zephyrus G16 (2025)</h3>
+                        <p class="text-gray-600 mb-4">AMD Ryzen 9 8950X, RTX 4080, 32GB RAM, 2TB SSD</p>
+                        <div class="flex justify-between items-center relative">
+                            <div>
+                                <span class="text-gray-400 line-through">$2,799.99</span>
+                                <span class="text-2xl font-bold text-primary ml-2">$2,239.99</span>
+                            </div>
+                            <button class="add-to-cart-btn bg-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors duration-300" 
+                                    data-id="rog-zephyrus-g16" 
+                                    data-name="ASUS ROG Zephyrus G16 (2025)" 
+                                    data-price="2239.99" 
+                                    data-image="https://www.azernews.az/media/2024/02/29/1704422071559.jpg"
+                                    data-brand="asus">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Offer 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative">
+                        <img src="https://cdn.wccftech.com/wp-content/uploads/2022/11/Razer-Blade-18-With-Intel-13th-Gen-Core-i9-13900HX-24-Core-5.4-GHz-CPU-_1.png">
+                        <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 m-2 rounded-full font-bold text-sm">
+                            SAVE 10%
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-primary">Razer Blade 18 (2025)</h3>
+                        <p class="text-gray-600 mb-4">Intel Core i9-14900HX, RTX 4090, 64GB RAM, 4TB SSD</p>
+                        <div class="flex justify-between items-center relative">
+                            <div>
+                                <span class="text-gray-400 line-through">$3,499.99</span>
+                                <span class="text-2xl font-bold text-primary ml-2">$3,149.99</span>
+                            </div>
+                            <button class="add-to-cart-btn bg-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors duration-300" 
+                                    data-id="razer-blade-18" 
+                                    data-name="Razer Blade 18 (2025)" 
+                                    data-price="3149.99" 
+                                    data-image="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                                    data-brand="razer">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Laptops Section -->
+    <section id="laptops" class="py-12 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-2 text-primary">Premium Laptops</h2>
+            <p class="text-center text-gray-600 mb-8">Discover the latest models from top brands</p>
+            
+            <!-- Category Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <button class="category-tab active px-4 py-2 rounded-full bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-colors duration-300" data-category="all">All</button>
+                <button class="category-tab px-4 py-2 rounded-full bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-colors duration-300" data-category="lenovo">Lenovo</button>
+                <button class="category-tab px-4 py-2 rounded-full bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-colors duration-300" data-category="asus">ASUS</button>
+                <button class="category-tab px-4 py-2 rounded-full bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-colors duration-300" data-category="razer">Razer</button>
+                <button class="category-tab px-4 py-2 rounded-full bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-colors duration-300" data-category="hp">HP</button>
+                <button class="category-tab px-4 py-2 rounded-full bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-colors duration-300" data-category="dell">Dell</button>
+                <button class="category-tab px-4 py-2 rounded-full bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-colors duration-300" data-category="alienware">Alienware</button>
+                <button class="category-tab px-4 py-2 rounded-full bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-colors duration-300" data-category="msi">MSI</button>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productsGrid">
+                <!-- Products will be populated here via JavaScript -->
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-10">
+                <button id="loadMoreBtn" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors duration-300">
+                    Load More Products
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="py-12 bg-gradient-to-br from-primary/5 to-primary/10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-2 text-primary">PC Components</h2>
+            <p class="text-center text-gray-600 mb-8">Build your dream PC with premium parts</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Component Category 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1591489378430-ef2f4c626b35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Graphics Cards" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-primary">Graphics Cards</h3>
+                        <p class="text-gray-600 mb-4">Latest NVIDIA RTX and AMD Radeon GPUs for gaming and content creation</p>
+                        <button class="w-full bg-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors duration-300">
+                            Browse Graphics Cards
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Component Category 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Processors" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-primary">Processors</h3>
+                        <p class="text-gray-600 mb-4">Intel Core and AMD Ryzen processors for every computing need</p>
+                        <button class="w-full bg-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors duration-300">
+                            Browse Processors
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Component Category 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Storage" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-primary">Storage</h3>
+                        <p class="text-gray-600 mb-4">High-speed SSDs and high-capacity HDDs for all your storage needs</p>
+                        <button class="w-full bg-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors duration-300">
+                            Browse Storage
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <button class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors duration-300">
+                    View All Components
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-12 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-2 text-primary">Why Choose Dihan1.pc</h2>
+            <p class="text-center text-gray-600 mb-12">We're committed to providing the best tech shopping experience</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-truck text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-primary">Free Shipping</h3>
+                    <p class="text-gray-600">Free shipping on all orders over $100</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-primary">Warranty</h3>
+                    <p class="text-gray-600">Extended warranty on all products</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-primary">24/7 Support</h3>
+                    <p class="text-gray-600">Expert technical support available 24/7</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-exchange-alt text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-primary">Easy Returns</h3>
+                    <p class="text-gray-600">30-day hassle-free return policy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+                <p class="mb-8">Subscribe to our newsletter for exclusive deals and tech news</p>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <input type="email" placeholder="Your email address" class="flex-1 py-3 px-4 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white">
+                    <button class="bg-white text-primary py-3 px-6 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-300">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <!-- Laptop/Computer Icon -->
+                        <div class="text-white">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="60"
+                                height="50"
+                                viewBox="0 0 120 100"
+                                fill="none"
+                                class="w-10 h-8"
+                            >
+                                <path
+                                    d="M100 70H20V25C20 22.2386 22.2386 20 25 20H95C97.7614 20 100 22.2386 100 25V70Z"
+                                    stroke="white"
+                                    stroke-width="8"
+                                    fill="none"
+                                />
+                                <path
+                                    d="M110 85H10C7.23858 85 5 82.7614 5 80V75C5 72.2386 7.23858 70 10 70H110C112.761 70 115 72.2386 115 75V80C115 82.7614 112.761 85 110 85Z"
+                                    fill="white"
+                                />
+                                <rect x="45" y="75" width="30" height="5" fill="#0e1e2b" />
+                            </svg>
+                        </div>
+
+                        <!-- Text Part -->
+                        <div class="flex flex-col">
+                            <h1 class="text-white text-xl font-bold tracking-tight">Dihan1.pc</h1>
+                            <p class="text-gray-400 text-xs tracking-widest font-medium">COMPUTERS</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">Your trusted source for premium laptops and PC components since 2020.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="#laptops" class="text-gray-400 hover:text-white transition-colors duration-300">Laptops</a></li>
+                        <li><a href="#components" class="text-gray-400 hover:text-white transition-colors duration-300">Components</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Customer Service -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Customer Service</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">My Account</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Track Order</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Shipping Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Returns & Warranty</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">123 Tech Street, Silicon Valley, CA 94043</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">+1 (800) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">support@dihan1.pc</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="border-gray-800 my-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Dihan1.pc. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-sm">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product Data
+        const products = [
+            {
+                id: 'legion-pro-7i',
+                name: 'Lenovo Legion Pro 7i (2025)',
+                price: 2549.99,
+                originalPrice: 2999.99,
+                image: 'https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/Lenovo-Legion-Pro-7i-gaming-laptop-RTX-4090-Core-i9.jpg',
+                brand: 'lenovo',
+                specs: {
+                    processor: 'Intel Core i9-14900HX',
+                    graphics: 'NVIDIA GeForce RTX 4090 16GB',
+                    memory: '32GB DDR5-5600MHz',
+                    storage: '2TB PCIe Gen4 SSD',
+                    display: '16" WQXGA 240Hz Mini-LED',
+                    os: 'Windows 11 Pro'
+                },
+                discount: 15
+            },
+            {
+                id: 'legion-7-pro',
+                name: 'Lenovo Legion 7 Pro (2025)',
+                price: 2299.99,
+                originalPrice: 2599.99,
+                image: 'https://microless.com/cdn/products/36de044bb2861aa943fb68ff4463749c-hi.jpg',
+                brand: 'lenovo',
+                specs: {
+                    processor: 'Intel Core i7-14700H',
+                    graphics: 'NVIDIA GeForce RTX 4080 12GB',
+                    memory: '32GB DDR5-5600MHz',
+                    storage: '1TB PCIe Gen4 SSD',
+                    display: '16" WQXGA 165Hz IPS',
+                    os: 'Windows 11 Home'
+                },
+                discount: 12
+            },
+            {
+                id: 'legion-5-pro',
+                name: 'Lenovo Legion 5 Pro (2024)',
+                price: 1699.99,
+                originalPrice: 1899.99,
+                image: 'https://sm.pcmag.com/t/pcmag_au/review/l/lenovo-leg/lenovo-legion-5-pro-gen-7-2022_3ahs.1920.jpg',
+                brand: 'lenovo',
+                specs: {
+                    processor: 'AMD Ryzen 9 8900H',
+                    graphics: 'NVIDIA GeForce RTX 4070 8GB',
+                    memory: '16GB DDR5-5200MHz',
+                    storage: '1TB PCIe Gen4 SSD',
+                    display: '16" WQXGA 165Hz IPS',
+                    os: 'Windows 11 Home'
+                },
+                discount: 10
+            },
+            {
+                id: 'legion-5i-pro',
+                name: 'Lenovo Legion 5i Pro (2024)',
+                price: 1599.99,
+                originalPrice: 1799.99,
+                image: 'https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/17_Legion_Pro_5i_G9_Hero_Front_Angle.jpg',
+                brand: 'lenovo',
+                specs: {
+                    processor: 'Intel Core i7-14700H',
+                    graphics: 'NVIDIA GeForce RTX 4060 8GB',
+                    memory: '16GB DDR5-5200MHz',
+                    storage: '1TB PCIe Gen4 SSD',
+                    display: '16" WQXGA 165Hz IPS',
+                    os: 'Windows 11 Home'
+                },
+                discount: 11
+            },
+            {
+                id: 'legion-9-pro',
+                name: 'Lenovo Legion 9 Pro (2025)',
+                price: 3299.99,
+                originalPrice: 3699.99,
+                image: 'https://m.media-amazon.com/images/I/81x7P1JQHAL.jpg',
+                brand: 'lenovo',
+                specs: {
+                    processor: 'Intel Core i9-14900HX',
+                    graphics: 'NVIDIA GeForce RTX 4090 16GB',
+                    memory: '64GB DDR5-6000MHz',
+                    storage: '4TB PCIe Gen4 SSD',
+                    display: '16" WQXGA 240Hz Mini-LED',
+                    os: 'Windows 11 Pro'
+                },
+                discount: 11
+            },
+            {
+                id: 'ideapad-slim-7',
+                name: 'Lenovo IdeaPad Slim 7 (2024)',
+                price: 1099.99,
+                originalPrice: 1299.99,
+                image: 'https://p4-ofp.static.pub/fes/cms/2021/08/25/splzgzjpi2pneia2a5ncvq1bl6kbkg412823.png',
+                brand: 'lenovo',
+                specs: {
+                    processor: 'AMD Ryzen 7 8800U',
+                    graphics: 'AMD Radeon Graphics',
+                    memory: '16GB LPDDR5X-6400MHz',
+                    storage: '1TB PCIe Gen4 SSD',
+                    display: '14" 2.8K OLED 90Hz',
+                    os: 'Windows 11 Home'
+                },
+                discount: 15
+            },
+            {
+                id: 'thinkpad-x1-carbon',
+                name: 'Lenovo ThinkPad X1 Carbon Gen 12 (2025)',
+                price: 1899.99,
+                originalPrice: 2099.99,
+                image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+                brand: 'lenovo',
+                specs: {
+                    processor: 'Intel Core Ultra 9 285H',
+                    graphics: 'Intel Arc Graphics',
+                    memory: '32GB LPDDR5X-6400MHz',
+                    storage: '2TB PCIe Gen4 SSD',
+                    display: '14" 2.8K OLED 90Hz',
+                    os: 'Windows 11 Pro'
+                },
+                discount: 10
+            },
+            {
+                id: 'rog-strix-scar-18',
+                name: 'ASUS ROG Strix SCAR 18 (2025)',
+                price: 3199.99,
+                originalPrice: 3499.99,
+                image: 'https://cdn.mos.cms.futurecdn.net/AEYvg9hJbdXFmWL4XKPiHk.jpg',
+                brand: 'asus',
+                specs: {
+                    processor: 'Intel Core i9-14900HX',
+                    graphics: 'NVIDIA GeForce RTX 4090 16GB',
+                    memory: '64GB DDR5-5600MHz',
+                    storage: '4TB PCIe Gen4 SSD',
+                    display: '18" QHD+ 240Hz Mini-LED',
+                    os: 'Windows 11 Pro'
+                },
+                discount: 9
+            },
+            {
+                id: 'rog-zephyrus-g16',
+                name: 'ASUS ROG Zephyrus G16 (2025)',
+                price: 2239.99,
+                originalPrice: 2799.99,
+                image: 'https://www.azernews.az/media/2024/02/29/1704422071559.jpg',
+                brand: 'asus',
+                specs: {
+                    processor: 'AMD Ryzen 9 8950X',
+                    graphics: 'NVIDIA GeForce RTX 4080 12GB',
+                    memory: '32GB DDR5-5600MHz',
+                    storage: '2TB PCIe Gen4 SSD',
+                    display: '16" QHD+ 240Hz OLED',
+                    os: 'Windows 11 Home'
+                },
+                discount: 20
+            },
+            {
+                id: 'rog-strix-g16',
+                name: 'ASUS ROG Strix G16 (2024)',
+                price: 1699.99,
+                originalPrice: 1899.99,
+                image: 'https://www.tmt.my/data/editor/sc-product/15681/800003198_G814J-ZRN6008W.png',
+                brand: 'asus',
+                specs: {
+                    processor: 'Intel Core i9-14900HX',
+                    graphics: 'NVIDIA GeForce RTX 4070 8GB',
+                    memory: '16GB DDR5-5200MHz',
+                    storage: '1TB PCIe Gen4 SSD',
+                    display: '16" QHD+ 165Hz IPS',
+                    os: 'Windows 11 Home'
+                },
+                discount: 11
+            },
+            {
+                id: 'tuf-a16',
+                name: 'ASUS TUF Gaming A16 (2024)',
+                price: 1299.99,
+                originalPrice: 1499.99,
+                image: 'https://www.techlandbd.com/image/cache/catalog/Laptop/ASUS/Tuf/tuf-gaming-a16-advantage-edition/asus-tuf-gaming-a16-advantage-edition-gaming-laptop-800x800.jpg',
+                brand: 'asus',
+                specs: {
+                    processor: 'AMD Ryzen 7 8845HS',
+                    graphics: 'NVIDIA GeForce RTX 4060 8GB',
+                    memory: '16GB DDR5-5200MHz',
+                    storage: '1TB PCIe Gen4 SSD',
+                    display: '16" FHD 165Hz IPS',
+                    os: 'Windows 11 Home'
+                },
+                discount: 13
+            },
+            {
+                id: 'tuf-f16',
+                name: 'ASUS TUF Gaming F16 (2024)',
+                price: 1199.99,
+                originalPrice: 1399.99,
+                image: 'https://pccircle.com/wp-content/uploads/2024/06/02_fx507-min_1_1-600x600.jpg',
+                brand: 'asus',
+                specs: {
+                    processor: 'Intel Core i7-14700H',
+                    graphics: 'NVIDIA GeForce RTX 4050 6GB',
+                    memory: '16GB DDR5-5200MHz',
+                    storage: '512GB PCIe Gen4 SSD',
+                    display: '16" FHD 144Hz IPS',
+                    os: 'Windows 11 Home'
+                },
+                discount: 14
+            },
+            {
+                id: 'zenbook-pro-16',
+                name: 'ASUS Zenbook Pro 16 (2025)',
+                price: 2499.99,
+                originalPrice: 2799.99,
+                image: 'https://dlcdnwebimgs.asus.com/gain/5d00c40b-911c-47d0-9753-8d01494e8478/',
+                brand: 'asus',
+                specs: {
+                    processor: 'Intel Core Ultra 9 285H',
+                    graphics: 'NVIDIA GeForce RTX 4070 8GB',
+                    memory: '32GB LPDDR5X-7500MHz',
+                    storage: '2TB PCIe Gen4 SSD',
+                    display: '16" 3.2K OLED 120Hz',
+                    os: 'Windows 11 Pro'
+                },
+                discount: 11
+            },
+            {
+                id: 'razer-blade-18',
+                name: 'Razer Blade 18 (2025)',
+                price: 3149.99,
+                originalPrice: 3499.99,
+                image: 'https://cdn.wccftech.com/wp-content/uploads/2022/11/Razer-Blade-18-With-Intel-13th-Gen-Core-i9-13900HX-24-Core-5.4-GHz-CPU-_1.png',
+                brand: 'razer',
+                specs: {
+                    processor: 'Intel Core i9-14900HX',
+                    graphics: 'NVIDIA GeForce RTX 4090 16GB',
+                    memory: '64GB DDR5-5600MHz',
+                    storage: '4TB PCIe Gen4 SSD',
+                    display: '18" QHD+ 240Hz Mini-LED',
+                    os: 'Windows 11 Pro'
+                },
+                discount: 10
+            },
+            {
+                id: 'razer-blade-16',
+                name: 'Razer Blade 16 (2025)',
+                price: 2799.99,
+                originalPrice: 3099.99,
+                image: 'https://cdn.mos.cms.futurecdn.net/v2/t:0,l:240,cw:1440,ch:1080,q:80,w:1440/yTyRF5DZECmabRxanCFmV.jpg',
+                brand: 'razer',
+                specs: {
+                    processor: 'Intel Core i9-14900H',
+                    graphics: 'NVIDIA GeForce RTX 4080 12GB',
+                    memory: '32GB DDR5-5600MHz',
+                    storage: '2TB PCIe Gen4 SSD',
+                    display: '16" UHD+ 240Hz Mini-LED',
+                    os: 'Windows 11 Pro'
+                },
+                discount: 10
+            },
+            {
+                id: 'hp-omen-16',
+                name: 'HP OMEN 16 (2025)',
+                price: 1899.99,
+                originalPrice: 2099.99,
+                image: 'https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/HP-Omen-16-Max-2025-Price-in-Nepal.jpg',
+                brand: 'hp',
+                specs: {
+                    processor: 'Intel Core i9-14900H',
+                    graphics: 'NVIDIA GeForce RTX 4070 8GB',
+                    memory: '32GB DDR5-5200MHz',
+                    storage: '2TB PCIe Gen4 SSD',
+                    display: '16" QHD 240Hz IPS',
+                    os: 'Windows 11 Home'
+                },
+                discount: 10
+            },
+            {
+                id: 'hp-victus-16',
+                name: 'HP Victus 16 (2024)',
+                price: 1299.99,
+                originalPrice: 1499.99,
+                image: 'https://computermania.com.bd/wp-content/uploads/2025/01/HP-Victus-16-1-1.gif',
+                brand: 'hp',
+                specs: {
+                    processor: 'AMD Ryzen 7 8845HS',
+                    graphics: 'NVIDIA GeForce RTX 4060 8GB',
+                    memory: '16GB DDR5-5200MHz',
+                    storage: '1TB PCIe Gen4 SSD',
+                    display: '16" FHD 144Hz IPS',
+                    os: 'Windows 11 Home'
+                },
+                discount: 13
+            },
+            {
+                id: 'alienware-m18',
+                name: 'Alienware m18 (2025)',
+                price: 3299.99,
+                originalPrice: 3699.99,
+                image: 'https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/Alienware-m18-R2-gaming-laptop-RTX-4090-Core-i9.jpg',
+                brand: 'alienware',
+                specs: {
+                    processor: 'Intel Core i9-14900HX',
+                    graphics: 'NVIDIA GeForce RTX 4090 16GB',
+                    memory: '64GB DDR5-5600MHz',
+                    storage: '4TB PCIe Gen4 SSD',
+                    display: '18" QHD+ 240Hz Mini-LED',
+                    os: 'Windows 11 Pro'
+                },
+                discount: 11
+            },
+            {
+                id: 'alienware-x16',
+                name: 'Alienware x16 (2025)',
+                price: 2799.99,
+                originalPrice: 3099.99,
+                image: 'https://m.media-amazon.com/images/I/61Y4XnOvs-L._AC_UF350,350_QL80_.jpg',
+                brand: 'alienware',
+                specs: {
+                    processor: 'Intel Core i9-14900H',
+                    graphics: 'NVIDIA GeForce RTX 4080 12GB',
+                    memory: '32GB DDR5-5600MHz',
+                    storage: '2TB PCIe Gen4 SSD',
+                    display: '16" QHD+ 240Hz IPS',
+                    os: 'Windows 11 Pro'
+                },
+                discount: 10
+            },
+            {
+                id: 'msi-titan-18',
+                name: 'MSI Titan GT 18 HX (2025)',
+                price: 3499.99,
+                originalPrice: 3899.99,
+                image: 'https://i.extremetech.com/imagery/content-types/043QNe0fJpMqRg4Oyr1LoKX/hero-image.fit_lim.v1704402373.jpg',
+                brand: 'msi',
+                specs: {
+                    processor: 'Intel Core i9-14900HX',
+                    graphics: 'NVIDIA GeForce RTX 4090 16GB',
+                    memory: '64GB DDR5-5600MHz',
+                    storage: '4TB PCIe Gen4 SSD',
+                    display: '18" UHD+ 240Hz Mini-LED',
+                    os: 'Windows 11 Pro'
+                },
+                discount: 10
+            },
+            {
+                id: 'msi-stealth-16',
+                name: 'MSI Stealth 16 AI Studio (2025)',
+                price: 2499.99,
+                originalPrice: 2799.99,
+                image: 'https://m.media-amazon.com/images/I/719mgS0PGNL.jpg',
+                brand: 'msi',
+                specs: {
+                    processor: 'Intel Core Ultra 9 285H',
+                    graphics: 'NVIDIA GeForce RTX 4070 8GB',
+                    memory: '32GB DDR5-6000MHz',
+                    storage: '2TB PCIe Gen4 SSD',
+                    display: '16" UHD+ OLED 120Hz',
+                    os: 'Windows 11 Pro'
+                },
+                discount: 11
+            },
+            {
+                id: 'dell-xps-16',
+                name: 'Dell XPS 16 (2025)',
+                price: 2699.99,
+                originalPrice: 2999.99,
+                image: 'https://sm.pcmag.com/pcmag_uk/photo/default/04x4mxmtbqowi2q7q1e5v6k-8_7ss6.jpg',
+                brand: 'dell',
+                specs: {
+                    processor: 'Intel Core Ultra 9 285H',
+                    graphics: 'NVIDIA GeForce RTX 4070 8GB',
+                    memory: '32GB LPDDR5X-7500MHz',
+                    storage: '2TB PCIe Gen4 SSD',
+                    display: '16" 4K+ OLED 120Hz',
+                    os: 'Windows 11 Pro'
+                },
+                discount: 10
+            }
+        ];
+
+        // Cart functionality
+        let cart = [];
+        let appliedCoupon = null;
+        const coupons = [
+            { code: 'WELCOME10', discount: 10 },
+            { code: 'SUMMER25', discount: 25 },
+            { code: 'FLASH15', discount: 15 }
+        ];
+        const shippingCost = 15.99;
+
+        // Initialize Hero Slider
+        const heroSwiper = new Swiper('.heroSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            }
+        });
+
+        // DOM Elements
+        const productsGrid = document.getElementById('productsGrid');
+        const cartButton = document.getElementById('cartButton');
+        const cartPanel = document.getElementById('cartPanel');
+        const closeCartButton = document.getElementById('closeCartButton');
+        const cartItems = document.getElementById('cartItems');
+        const cartCount = document.getElementById('cartCount');
+        const cartSubtotal = document.getElementById('cartSubtotal');
+        const cartShipping = document.getElementById('cartShipping');
+        const cartDiscount = document.getElementById('cartDiscount');
+        const cartTotal = document.getElementById('cartTotal');
+        const couponCode = document.getElementById('couponCode');
+        const applyCoupon = document.getElementById('applyCoupon');
+        const couponMessage = document.getElementById('couponMessage');
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        const searchResultsContent = document.getElementById('searchResultsContent');
+        const scrollIndicator = document.getElementById('scrollIndicator');
+        const notification = document.getElementById('notification');
+        const notificationMessage = document.getElementById('notificationMessage');
+
+        // Variables for product display
+        let currentCategory = 'all';
+        let displayedProducts = 8;
+        const productsPerPage = 8;
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            updateCartCount();
+            setupEventListeners();
+            setupScrollIndicator();
+        });
+
+        // Setup Event Listeners
+        function setupEventListeners() {
+            // Cart Toggle
+            cartButton.addEventListener('click', toggleCart);
+            closeCartButton.addEventListener('click', toggleCart);
+
+            // Category Tabs
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    currentCategory = tab.dataset.category;
+                    displayedProducts = productsPerPage;
+                    renderProducts();
+                });
+            });
+
+            // Load More Button
+            loadMoreBtn.addEventListener('click', () => {
+                displayedProducts += productsPerPage;
+                renderProducts();
+            });
+
+            // Apply Coupon
+            applyCoupon.addEventListener('click', () => {
+                const code = couponCode.value.trim().toUpperCase();
+                const coupon = coupons.find(c => c.code === code);
+                
+                if (coupon) {
+                    appliedCoupon = coupon;
+                    couponMessage.textContent = `${coupon.discount}% discount applied!`;
+                    couponMessage.classList.remove('hidden', 'text-red-500');
+                    couponMessage.classList.add('text-green-500');
+                    updateCart();
+                    showNotification(`${coupon.discount}% discount applied!`);
+                } else {
+                    couponMessage.textContent = 'Invalid coupon code';
+                    couponMessage.classList.remove('hidden', 'text-green-500');
+                    couponMessage.classList.add('text-red-500');
+                }
+                couponMessage.classList.remove('hidden');
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', handleSearch);
+            searchInput.addEventListener('focus', () => {
+                if (searchInput.value.trim().length > 0) {
+                    searchResults.classList.add('show');
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                    searchResults.classList.remove('show');
+                }
+            });
+
+            // Page transitions
+            document.querySelectorAll('[data-page]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const page = link.dataset.page;
+                    document.body.classList.add('page-transition');
+                    
+                    // Simulate page change with color transition
+                    setTimeout(() => {
+                        document.body.classList.remove('page-transition');
+                    }, 500);
+                });
+            });
+        }
+
+        // Render Products
+        function renderProducts() {
+            const filteredProducts = currentCategory === 'all' 
+                ? products 
+                : products.filter(product => product.brand === currentCategory);
+            
+            const productsToShow = filteredProducts.slice(0, displayedProducts);
+            
+            productsGrid.innerHTML = '';
+            
+            productsToShow.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = `product-card ${product.brand}-hover bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group`;
+                
+                const discountBadge = product.discount 
+                    ? `<div class="discount-badge">-${product.discount}%</div>` 
+                    : '';
+                
+                const specsHTML = Object.entries(product.specs)
+                    .map(([key, value]) => `<div><span class="font-medium capitalize">${key}:</span> ${value}</div>`)
+                    .join('');
+                
+                productCard.innerHTML = `
+                    <div class="relative">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        ${discountBadge}
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-primary">${product.name}</h3>
+                        <p class="text-gray-600 mb-4">
+                            ${product.specs.processor}, ${product.specs.graphics.split(' ').slice(0, 3).join(' ')}
+                        </p>
+                        <div class="flex justify-between items-center relative">
+                            <div>
+                                ${product.originalPrice !== product.price 
+                                    ? `<span class="text-gray-400 line-through">$${product.originalPrice.toFixed(2)}</span>` 
+                                    : ''}
+                                <span class="text-2xl font-bold text-primary ml-2">$${product.price.toFixed(2)}</span>
+                            </div>
+                            <button class="add-to-cart-btn bg-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors duration-300" 
+                                    data-id="${product.id}" 
+                                    data-name="${product.name}" 
+                                    data-price="${product.price}" 
+                                    data-image="${product.image}"
+                                    data-brand="${product.brand}">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="specs-popup">
+                        <h4 class="font-bold mb-2">Specifications</h4>
+                        <div class="text-sm space-y-1">
+                            ${specsHTML}
+                        </div>
+                    </div>
+                `;
+                
+                productsGrid.appendChild(productCard);
+                
+                // Add to cart functionality
+                const addToCartBtn = productCard.querySelector('.add-to-cart-btn');
+                addToCartBtn.addEventListener('click', () => {
+                    addToCart(product);
+                });
+            });
+            
+            // Show/hide load more button
+            if (productsToShow.length < filteredProducts.length) {
+                loadMoreBtn.classList.remove('hidden');
+            } else {
+                loadMoreBtn.classList.add('hidden');
+            }
+        }
+
+        // Add to Cart
+        function addToCart(product) {
+            const existingItem = cart.find(item => item.id === product.id);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    brand: product.brand,
+                    quantity: 1
+                });
+            }
+            
+            updateCart();
+            showNotification(`${product.name} added to cart!`);
+        }
+
+        // Remove from Cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+            showNotification('Item removed from cart');
+        }
+
+        // Update Cart
+        function updateCart() {
+            // Update cart count
+            updateCartCount();
+            
+            // Render cart items
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="text-center text-gray-500 py-10">
+                        <i class="fas fa-shopping-cart text-5xl mb-4 opacity-30"></i>
+                        <p>Your cart is empty</p>
+                        <p class="text-sm mt-2">Add some products to your cart</p>
+                    </div>
+                `;
+            } else {
+                cartItems.innerHTML = '';
+                
+                cart.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'flex items-start border-b border-gray-200 py-4';
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="w-20 h-20 object-cover rounded-lg mr-4">
+                        <div class="flex-1">
+                            <h4 class="font-medium text-primary">${item.name}</h4>
+                            <div class="flex justify-between items-center mt-2">
+                                <div class="flex items-center">
+                                    <button class="decrease-quantity bg-gray-200 text-gray-700 w-8 h-8 rounded-l-lg flex items-center justify-center hover:bg-gray-300 transition-colors duration-300" data-id="${item.id}">
+                                        <i class="fas fa-minus text-xs"></i>
+                                    </button>
+                                    <span class="bg-gray-100 text-gray-800 w-10 h-8 flex items-center justify-center">${item.quantity}</span>
+                                    <button class="increase-quantity bg-gray-200 text-gray-700 w-8 h-8 rounded-r-lg flex items-center justify-center hover:bg-gray-300 transition-colors duration-300" data-id="${item.id}">
+                                        <i class="fas fa-plus text-xs"></i>
+                                    </button>
+                                </div>
+                                <span class="font-medium">$${(item.price * item.quantity).toFixed(2)}</span>
+                            </div>
+                        </div>
+                        <button class="remove-item text-gray-400 hover:text-red-500 transition-colors duration-300 ml-2" data-id="${item.id}">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    `;
+                    
+                    cartItems.appendChild(cartItem);
+                });
+                
+                // Add event listeners to cart item buttons
+                document.querySelectorAll('.decrease-quantity').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.dataset.id;
+                        const item = cart.find(item => item.id === id);
+                        
+                        if (item.quantity > 1) {
+                            item.quantity -= 1;
+                        } else {
+                            removeFromCart(id);
+                        }
+                        
+                        updateCart();
+                    });
+                });
+                
+                document.querySelectorAll('.increase-quantity').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.dataset.id;
+                        const item = cart.find(item => item.id === id);
+                        item.quantity += 1;
+                        updateCart();
+                    });
+                });
+                
+                document.querySelectorAll('.remove-item').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.dataset.id;
+                        removeFromCart(id);
+                    });
+                });
+            }
+            
+            // Update cart totals
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            const discount = appliedCoupon ? (subtotal * appliedCoupon.discount / 100) : 0;
+            const shipping = cart.length > 0 ? shippingCost : 0;
+            const total = subtotal + shipping - discount;
+            
+            cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+            cartShipping.textContent = `$${shipping.toFixed(2)}`;
+            cartDiscount.textContent = `-$${discount.toFixed(2)}`;
+            cartTotal.textContent = `$${total.toFixed(2)}`;
+        }
+
+        // Update Cart Count
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = count;
+            
+            if (count > 0) {
+                cartCount.classList.remove('hidden');
+            } else {
+                cartCount.classList.add('hidden');
+            }
+        }
+
+        // Toggle Cart
+        function toggleCart() {
+            cartPanel.classList.toggle('open');
+        }
+
+        // Handle Search
+        function handleSearch() {
+            const query = searchInput.value.trim().toLowerCase();
+            
+            if (query.length < 2) {
+                searchResults.classList.remove('show');
+                return;
+            }
+            
+            const results = products.filter(product => 
+                product.name.toLowerCase().includes(query) || 
+                product.brand.toLowerCase().includes(query) ||
+                Object.values(product.specs).some(spec => 
+                    spec.toString().toLowerCase().includes(query)
+                )
+            );
+            
+            if (results.length > 0) {
+                searchResultsContent.innerHTML = '';
+                
+                results.slice(0, 5).forEach(product => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer';
+                    resultItem.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}" class="w-12 h-12 object-cover rounded-lg mr-3">
+                        <div>
+                            <h4 class="font-medium text-primary">${product.name}</h4>
+                            <p class="text-sm text-gray-600">$${product.price.toFixed(2)}</p>
+                        </div>
+                    `;
+                    
+                    resultItem.addEventListener('click', () => {
+                        // Scroll to the product section
+                        document.getElementById('laptops').scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Set the category and find the product
+                        categoryTabs.forEach(tab => {
+                            if (tab.dataset.category === product.brand) {
+                                tab.click();
+                            }
+                        });
+                        
+                        // Close search results
+                        searchResults.classList.remove('show');
+                        
+                        // Highlight the product (simple animation)
+                        setTimeout(() => {
+                            const productElement = Array.from(document.querySelectorAll('.product-card'))
+                                .find(card => card.querySelector('.add-to-cart-btn').dataset.id === product.id);
+                            
+                            if (productElement) {
+                                productElement.classList.add('animate-pulse');
+                                productElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                
+                                setTimeout(() => {
+                                    productElement.classList.remove('animate-pulse');
+                                }, 2000);
+                            }
+                        }, 500);
+                    });
+                    
+                    searchResultsContent.appendChild(resultItem);
+                });
+                
+                if (results.length > 5) {
+                    const moreResults = document.createElement('div');
+                    moreResults.className = 'text-center text-primary text-sm mt-2 font-medium cursor-pointer hover:underline';
+                    moreResults.textContent = `See all ${results.length} results`;
+                    searchResultsContent.appendChild(moreResults);
+                }
+                
+                searchResults.classList.add('show');
+            } else {
+                searchResultsContent.innerHTML = `
+                    <div class="text-center text-gray-500 py-4">
+                        <p>No results found for "${query}"</p>
+                    </div>
+                `;
+                searchResults.classList.add('show');
+            }
+        }
+
+        // Setup Scroll Indicator
+        function setupScrollIndicator() {
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                scrollIndicator.style.width = scrolled + '%';
+            });
+        }
+
+        // Show Notification
+        function showNotification(message) {
+            notificationMessage.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                closeNotification();
+            }, 3000);
+        }
+
+        // Close Notification
+        function closeNotification() {
+            notification.classList.remove('show');
+        }
+
+        // Add to cart for all product buttons
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('add-to-cart-btn') || e.target.closest('.add-to-cart-btn')) {
+                const button = e.target.classList.contains('add-to-cart-btn') ? e.target : e.target.closest('.add-to-cart-btn');
+                const { id, name, price, image, brand } = button.dataset;
+                
+                addToCart({
+                    id,
+                    name,
+                    price: parseFloat(price),
+                    image,
+                    brand
+                });
+            }
+        });
+    </script>
+</body>
+</html>

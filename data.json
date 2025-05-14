@@ -1,0 +1,376 @@
+[
+  {
+    "id": "legion-pro-7i",
+    "name": "Lenovo Legion Pro 7i (2025)",
+    "price": 2549.99,
+    "originalPrice": 2999.99,
+    "image": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/Lenovo-Legion-Pro-7i-gaming-laptop-RTX-4090-Core-i9.jpg",
+    "brand": "lenovo",
+    "specs": {
+      "processor": "Intel Core i9-14900HX",
+      "graphics": "NVIDIA GeForce RTX 4090 16GB",
+      "memory": "32GB DDR5-5600MHz",
+      "storage": "2TB PCIe Gen4 SSD",
+      "display": "16\" WQXGA 240Hz Mini-LED",
+      "os": "Windows 11 Pro"
+    },
+    "discount": 15
+  },
+  {
+    "id": "legion-7-pro",
+    "name": "Lenovo Legion 7 Pro (2025)",
+    "price": 2299.99,
+    "originalPrice": 2599.99,
+    "image": "https://microless.com/cdn/products/36de044bb2861aa943fb68ff4463749c-hi.jpg",
+    "brand": "lenovo",
+    "specs": {
+      "processor": "Intel Core i7-14700H",
+      "graphics": "NVIDIA GeForce RTX 4080 12GB",
+      "memory": "32GB DDR5-5600MHz",
+      "storage": "1TB PCIe Gen4 SSD",
+      "display": "16\" WQXGA 165Hz IPS",
+      "os": "Windows 11 Home"
+    },
+    "discount": 12
+  },
+  {
+    "id": "legion-5-pro",
+    "name": "Lenovo Legion 5 Pro (2024)",
+    "price": 1699.99,
+    "originalPrice": 1899.99,
+    "image": "https://sm.pcmag.com/t/pcmag_au/review/l/lenovo-leg/lenovo-legion-5-pro-gen-7-2022_3ahs.1920.jpg",
+    "brand": "lenovo",
+    "specs": {
+      "processor": "AMD Ryzen 9 8900H",
+      "graphics": "NVIDIA GeForce RTX 4070 8GB",
+      "memory": "16GB DDR5-5200MHz",
+      "storage": "1TB PCIe Gen4 SSD",
+      "display": "16\" WQXGA 165Hz IPS",
+      "os": "Windows 11 Home"
+    },
+    "discount": 10
+  },
+  {
+    "id": "legion-5i-pro",
+    "name": "Lenovo Legion 5i Pro (2024)",
+    "price": 1599.99,
+    "originalPrice": 1799.99,
+    "image": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/17_Legion_Pro_5i_G9_Hero_Front_Angle.jpg",
+    "brand": "lenovo",
+    "specs": {
+      "processor": "Intel Core i7-14700H",
+      "graphics": "NVIDIA GeForce RTX 4060 8GB",
+      "memory": "16GB DDR5-5200MHz",
+      "storage": "1TB PCIe Gen4 SSD",
+      "display": "16\" WQXGA 165Hz IPS",
+      "os": "Windows 11 Home"
+    },
+    "discount": 11
+  },
+  {
+    "id": "legion-9-pro",
+    "name": "Lenovo Legion 9 Pro (2025)",
+    "price": 3299.99,
+    "originalPrice": 3699.99,
+    "image": "https://m.media-amazon.com/images/I/81x7P1JQHAL.jpg",
+    "brand": "lenovo",
+    "specs": {
+      "processor": "Intel Core i9-14900HX",
+      "graphics": "NVIDIA GeForce RTX 4090 16GB",
+      "memory": "64GB DDR5-6000MHz",
+      "storage": "4TB PCIe Gen4 SSD",
+      "display": "16\" WQXGA 240Hz Mini-LED",
+      "os": "Windows 11 Pro"
+    },
+    "discount": 11
+  },
+  {
+    "id": "ideapad-slim-7",
+    "name": "Lenovo IdeaPad Slim 7 (2024)",
+    "price": 1099.99,
+    "originalPrice": 1299.99,
+    "image": "https://p4-ofp.static.pub/fes/cms/2021/08/25/splzgzjpi2pneia2a5ncvq1bl6kbkg412823.png",
+    "brand": "lenovo",
+    "specs": {
+      "processor": "AMD Ryzen 7 8800U",
+      "graphics": "AMD Radeon Graphics",
+      "memory": "16GB LPDDR5X-6400MHz",
+      "storage": "1TB PCIe Gen4 SSD",
+      "display": "14\" 2.8K OLED 90Hz",
+      "os": "Windows 11 Home"
+    },
+    "discount": 15
+  },
+  {
+    "id": "thinkpad-x1-carbon",
+    "name": "Lenovo ThinkPad X1 Carbon Gen 12 (2025)",
+    "price": 1899.99,
+    "originalPrice": 2099.99,
+    "image": "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+    "brand": "lenovo",
+    "specs": {
+      "processor": "Intel Core Ultra 9 285H",
+      "graphics": "Intel Arc Graphics",
+      "memory": "32GB LPDDR5X-6400MHz",
+      "storage": "2TB PCIe Gen4 SSD",
+      "display": "14\" 2.8K OLED 90Hz",
+      "os": "Windows 11 Pro"
+    },
+    "discount": 10
+  },
+  {
+    "id": "rog-strix-scar-18",
+    "name": "ASUS ROG Strix SCAR 18 (2025)",
+    "price": 3199.99,
+    "originalPrice": 3499.99,
+    "image": "https://cdn.mos.cms.futurecdn.net/AEYvg9hJbdXFmWL4XKPiHk.jpg",
+    "brand": "asus",
+    "specs": {
+      "processor": "Intel Core i9-14900HX",
+      "graphics": "NVIDIA GeForce RTX 4090 16GB",
+      "memory": "64GB DDR5-5600MHz",
+      "storage": "4TB PCIe Gen4 SSD",
+      "display": "18\" QHD+ 240Hz Mini-LED",
+      "os": "Windows 11 Pro"
+    },
+    "discount": 9
+  },
+  {
+    "id": "rog-zephyrus-g16",
+    "name": "ASUS ROG Zephyrus G16 (2025)",
+    "price": 2239.99,
+    "originalPrice": 2799.99,
+    "image": "https://www.azernews.az/media/2024/02/29/1704422071559.jpg",
+    "brand": "asus",
+    "specs": {
+      "processor": "AMD Ryzen 9 8950X",
+      "graphics": "NVIDIA GeForce RTX 4080 12GB",
+      "memory": "32GB DDR5-5600MHz",
+      "storage": "2TB PCIe Gen4 SSD",
+      "display": "16\" QHD+ 240Hz OLED",
+      "os": "Windows 11 Home"
+    },
+    "discount": 20
+  },
+  {
+    "id": "rog-strix-g16",
+    "name": "ASUS ROG Strix G16 (2024)",
+    "price": 1699.99,
+    "originalPrice": 1899.99,
+    "image": "https://www.tmt.my/data/editor/sc-product/15681/800003198_G814J-ZRN6008W.png",
+    "brand": "asus",
+    "specs": {
+      "processor": "Intel Core i9-14900HX",
+      "graphics": "NVIDIA GeForce RTX 4070 8GB",
+      "memory": "16GB DDR5-5200MHz",
+      "storage": "1TB PCIe Gen4 SSD",
+      "display": "16\" QHD+ 165Hz IPS",
+      "os": "Windows 11 Home"
+    },
+    "discount": 11
+  },
+  {
+    "id": "tuf-a16",
+    "name": "ASUS TUF Gaming A16 (2024)",
+    "price": 1299.99,
+    "originalPrice": 1499.99,
+    "image": "https://www.techlandbd.com/image/cache/catalog/Laptop/ASUS/Tuf/tuf-gaming-a16-advantage-edition/asus-tuf-gaming-a16-advantage-edition-gaming-laptop-800x800.jpg",
+    "brand": "asus",
+    "specs": {
+      "processor": "AMD Ryzen 7 8845HS",
+      "graphics": "NVIDIA GeForce RTX 4060 8GB",
+      "memory": "16GB DDR5-5200MHz",
+      "storage": "1TB PCIe Gen4 SSD",
+      "display": "16\" FHD 165Hz IPS",
+      "os": "Windows 11 Home"
+    },
+    "discount": 13
+  },
+  {
+    "id": "tuf-f16",
+    "name": "ASUS TUF Gaming F16 (2024)",
+    "price": 1199.99,
+    "originalPrice": 1399.99,
+    "image": "https://pccircle.com/wp-content/uploads/2024/06/02_fx507-min_1_1-600x600.jpg",
+    "brand": "asus",
+    "specs": {
+      "processor": "Intel Core i7-14700H",
+      "graphics": "NVIDIA GeForce RTX 4050 6GB",
+      "memory": "16GB DDR5-5200MHz",
+      "storage": "512GB PCIe Gen4 SSD",
+      "display": "16\" FHD 144Hz IPS",
+      "os": "Windows 11 Home"
+    },
+    "discount": 14
+  },
+  {
+    "id": "zenbook-pro-16",
+    "name": "ASUS Zenbook Pro 16 (2025)",
+    "price": 2499.99,
+    "originalPrice": 2799.99,
+    "image": "https://dlcdnwebimgs.asus.com/gain/5d00c40b-911c-47d0-9753-8d01494e8478/",
+    "brand": "asus",
+    "specs": {
+      "processor": "Intel Core Ultra 9 285H",
+      "graphics": "NVIDIA GeForce RTX 4070 8GB",
+      "memory": "32GB LPDDR5X-7500MHz",
+      "storage": "2TB PCIe Gen4 SSD",
+      "display": "16\" 3.2K OLED 120Hz",
+      "os": "Windows 11 Pro"
+    },
+    "discount": 11
+  },
+  {
+    "id": "razer-blade-18",
+    "name": "Razer Blade 18 (2025)",
+    "price": 3149.99,
+    "originalPrice": 3499.99,
+    "image": "https://cdn.wccftech.com/wp-content/uploads/2022/11/Razer-Blade-18-With-Intel-13th-Gen-Core-i9-13900HX-24-Core-5.4-GHz-CPU-_1.png",
+    "brand": "razer",
+    "specs": {
+      "processor": "Intel Core i9-14900HX",
+      "graphics": "NVIDIA GeForce RTX 4090 16GB",
+      "memory": "64GB DDR5-5600MHz",
+      "storage": "4TB PCIe Gen4 SSD",
+      "display": "18\" QHD+ 240Hz Mini-LED",
+      "os": "Windows 11 Pro"
+    },
+    "discount": 10
+  },
+  {
+    "id": "razer-blade-16",
+    "name": "Razer Blade 16 (2025)",
+    "price": 2799.99,
+    "originalPrice": 3099.99,
+    "image": "https://cdn.mos.cms.futurecdn.net/v2/t:0,l:240,cw:1440,ch:1080,q:80,w:1440/yTyRF5DZECmabRxanCFmV.jpg",
+    "brand": "razer",
+    "specs": {
+      "processor": "Intel Core i9-14900H",
+      "graphics": "NVIDIA GeForce RTX 4080 12GB",
+      "memory": "32GB DDR5-5600MHz",
+      "storage": "2TB PCIe Gen4 SSD",
+      "display": "16\" UHD+ 240Hz Mini-LED",
+      "os": "Windows 11 Pro"
+    },
+    "discount": 10
+  },
+  {
+    "id": "hp-omen-16",
+    "name": "HP OMEN 16 (2025)",
+    "price": 1899.99,
+    "originalPrice": 2099.99,
+    "image": "https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/HP-Omen-16-Max-2025-Price-in-Nepal.jpg",
+    "brand": "hp",
+    "specs": {
+      "processor": "Intel Core i9-14900H",
+      "graphics": "NVIDIA GeForce RTX 4070 8GB",
+      "memory": "32GB DDR5-5200MHz",
+      "storage": "2TB PCIe Gen4 SSD",
+      "display": "16\" QHD 240Hz IPS",
+      "os": "Windows 11 Home"
+    },
+    "discount": 10
+  },
+  {
+    "id": "hp-victus-16",
+    "name": "HP Victus 16 (2024)",
+    "price": 1299.99,
+    "originalPrice": 1499.99,
+    "image": "https://computermania.com.bd/wp-content/uploads/2025/01/HP-Victus-16-1-1.gif",
+    "brand": "hp",
+    "specs": {
+      "processor": "AMD Ryzen 7 8845HS",
+      "graphics": "NVIDIA GeForce RTX 4060 8GB",
+      "memory": "16GB DDR5-5200MHz",
+      "storage": "1TB PCIe Gen4 SSD",
+      "display": "16\" FHD 144Hz IPS",
+      "os": "Windows 11 Home"
+    },
+    "discount": 13
+  },
+  {
+    "id": "alienware-m18",
+    "name": "Alienware m18 (2025)",
+    "price": 3299.99,
+    "originalPrice": 3699.99,
+    "image": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/Alienware-m18-R2-gaming-laptop-RTX-4090-Core-i9.jpg",
+    "brand": "alienware",
+    "specs": {
+      "processor": "Intel Core i9-14900HX",
+      "graphics": "NVIDIA GeForce RTX 4090 16GB",
+      "memory": "64GB DDR5-5600MHz",
+      "storage": "4TB PCIe Gen4 SSD",
+      "display": "18\" QHD+ 240Hz Mini-LED",
+      "os": "Windows 11 Pro"
+    },
+    "discount": 11
+  },
+  {
+    "id": "alienware-x16",
+    "name": "Alienware x16 (2025)",
+    "price": 2799.99,
+    "originalPrice": 3099.99,
+    "image": "https://m.media-amazon.com/images/I/61Y4XnOvs-L._AC_UF350,350_QL80_.jpg",
+    "brand": "alienware",
+    "specs": {
+      "processor": "Intel Core i9-14900H",
+      "graphics": "NVIDIA GeForce RTX 4080 12GB",
+      "memory": "32GB DDR5-5600MHz",
+      "storage": "2TB PCIe Gen4 SSD",
+      "display": "16\" QHD+ 240Hz IPS",
+      "os": "Windows 11 Pro"
+    },
+    "discount": 10
+  },
+  {
+    "id": "msi-titan-18",
+    "name": "MSI Titan GT 18 HX (2025)",
+    "price": 3499.99,
+    "originalPrice": 3899.99,
+    "image": "https://i.extremetech.com/imagery/content-types/043QNe0fJpMqRg4Oyr1LoKX/hero-image.fit_lim.v1704402373.jpg",
+    "brand": "msi",
+    "specs": {
+      "processor": "Intel Core i9-14900HX",
+      "graphics": "NVIDIA GeForce RTX 4090 16GB",
+      "memory": "64GB DDR5-5600MHz",
+      "storage": "4TB PCIe Gen4 SSD",
+      "display": "18\" UHD+ 240Hz Mini-LED",
+      "os": "Windows 11 Pro"
+    },
+    "discount": 10
+  },
+  {
+    "id": "msi-stealth-16",
+    "name": "MSI Stealth 16 AI Studio (2025)",
+    "price": 2499.99,
+    "originalPrice": 2799.99,
+    "image": "https://m.media-amazon.com/images/I/719mgS0PGNL.jpg",
+    "brand": "msi",
+    "specs": {
+      "processor": "Intel Core Ultra 9 285H",
+      "graphics": "NVIDIA GeForce RTX 4070 8GB",
+      "memory": "32GB DDR5-6000MHz",
+      "storage": "2TB PCIe Gen4 SSD",
+      "display": "16\" UHD+ OLED 120Hz",
+      "os": "Windows 11 Pro"
+    },
+    "discount": 11
+  },
+  {
+    "id": "dell-xps-16",
+    "name": "Dell XPS 16 (2025)",
+    "price": 2699.99,
+    "originalPrice": 2999.99,
+    "image": "https://sm.pcmag.com/pcmag_uk/photo/default/04x4mxmtbqowi2q7q1e5v6k-8_7ss6.jpg",
+    "brand": "dell",
+    "specs": {
+      "processor": "Intel Core Ultra 9 285H",
+      "graphics": "NVIDIA GeForce RTX 4070 8GB",
+      "memory": "32GB LPDDR5X-7500MHz",
+      "storage": "2TB PCIe Gen4 SSD",
+      "display": "16\" 4K+ OLED 120Hz",
+      "os": "Windows 11 Pro"
+    },
+    "discount": 10
+  }
+]
