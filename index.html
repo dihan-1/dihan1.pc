@@ -281,6 +281,87 @@
         .search-results.show {
             max-height: 500px;
         }
+
+        /* Review Section Styles */
+        .review-swiper {
+            height: auto;
+            padding-bottom: 50px;
+        }
+
+        .review-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(14, 30, 43, 0.15);
+        }
+
+        .review-stars {
+            color: #FFD700;
+        }
+
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #0e1e2b;
+        }
+
+        /* Contact Form Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: translateY(-50px);
+            transition: all 0.3s ease;
+        }
+
+        .modal.open .modal-content {
+            transform: translateY(0);
+        }
+
+        .form-input {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .form-input:focus {
+            border-color: #0e1e2b;
+            box-shadow: 0 0 0 3px rgba(14, 30, 43, 0.1);
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -343,6 +424,7 @@
                     <a href="#components" class="nav-link text-primary font-medium hover:text-gray-800 transition-colors duration-300" data-page="components">Components</a>
                     <a href="#deals" class="nav-link text-primary font-medium hover:text-gray-800 transition-colors duration-300" data-page="deals">Deals</a>
                     <a href="#support" class="nav-link text-primary font-medium hover:text-gray-800 transition-colors duration-300" data-page="support">Support</a>
+                    <a href="#" id="contactLink" class="nav-link text-primary font-medium hover:text-gray-800 transition-colors duration-300" data-page="contact">Contact</a>
                 </nav>
 
                 <!-- Search and Cart -->
@@ -636,8 +718,179 @@
         </div>
     </section>
 
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="py-12 bg-gradient-to-br from-primary/5 to-primary/10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-2 text-primary">Customer Reviews</h2>
+            <p class="text-center text-gray-600 mb-8">What our customers say about their purchases</p>
+            
+            <div class="swiper review-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Review 1 -->
+                    <div class="swiper-slide">
+                        <div class="review-card h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="">
+                                <div>
+                                    <h4 class="font-bold text-primary">Khaled Kashmiri</h4>
+                                    <p class="text-gray-500 text-sm">Verified Buyer</p>
+                                </div>
+                            </div>
+                            <div class="review-stars mb-3 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h5 class="font-bold text-lg mb-2">Exceptional Performance!</h5>
+                            <p class="text-gray-600 mb-4">The Legion Pro 7i exceeded all my expectations. The RTX 4090 handles every game I throw at it with ease, even at max settings. The cooling system is impressive - even during intense gaming sessions, it stays relatively quiet and cool.</p>
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-500">Purchased: Lenovo Legion Pro 7i</p>
+                                <p class="text-sm text-gray-400">Posted on May 2, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 2 -->
+                    <div class="swiper-slide">
+                        <div class="review-card h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="" alt="Customer" class="review-avatar mr-4">
+                                <div>
+                                    <h4 class="font-bold text-primary">Usama Bin Laden</h4>
+                                    <p class="text-gray-500 text-sm">Verified Buyer</p>
+                                </div>
+                            </div>
+                            <div class="review-stars mb-3 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <h5 class="font-bold text-lg mb-2">Perfect for Content Creation</h5>
+                            <p class="text-gray-600 mb-4">As a drone controller and weapon designer, the ASUS ROG Zephyrus G16 has been a game-changer for my workflow. The OLED display is stunning with accurate colors, and the RTX 4080 makes rendering a breeze. Battery life could be better, but that's expected with this much power. With the help of this soon i will finish the us, israel and chai wala</p>
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-500">Purchased: ASUS ROG Zephyrus G16</p>
+                                <p class="text-sm text-gray-400">Posted on April 18, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 3 -->
+                    <div class="swiper-slide">
+                        <div class="review-card h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="" alt="Customer" class="review-avatar mr-4">
+                                <div>
+                                    <h4 class="font-bold text-primary">Adolf Hitler</h4>
+                                    <p class="text-gray-500 text-sm">Verified Buyer</p>
+                                </div>
+                            </div>
+                            <div class="review-stars mb-3 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h5 class="font-bold text-lg mb-2">Worth Every Penny</h5>
+                            <p class="text-gray-600 mb-4">The Razer Blade 18 is a beast! With the help of this, now i will be able to finish the last 5% germs, sorry jews</p>
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-500">Purchased: Razer Blade 18</p>
+                                <p class="text-sm text-gray-400">Posted on March 30, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 4 -->
+                    <div class="swiper-slide">
+                        <div class="review-card h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="" alt="Customer" class="review-avatar mr-4">
+                                <div>
+                                    <h4 class="font-bold text-primary">Yahya Sinwar</h4>
+                                    <p class="text-gray-500 text-sm">Verified Buyer</p>
+                                </div>
+                            </div>
+                            <div class="review-stars mb-3 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <h5 class="font-bold text-lg mb-2">Great Value Gaming Laptop</h5>
+                            <p class="text-gray-600 mb-4">The HP Victus 16 offers incredible value for its price point. It handles all my games at high settings without breaking a sweat. The build quality is decent, though not as premium as more expensive options. Customer service from Dihan1.pc was excellent - they helped me choose the right configuration for my needs.</p>
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-500">Purchased: HP Victus 16</p>
+                                <p class="text-sm text-gray-400">Posted on April 5, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 5 -->
+                    <div class="swiper-slide">
+                        <div class="review-card h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="" alt="Customer" class="review-avatar mr-4">
+                                <div>
+                                    <h4 class="font-bold text-primary">Aurangjeb</h4>
+                                    <p class="text-gray-500 text-sm">Verified Buyer</p>
+                                </div>
+                            </div>
+                            <div class="review-stars mb-3 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <h5 class="font-bold text-lg mb-2">Professional Powerhouse</h5>
+                            <p class="text-gray-600 mb-4">The Dell XPS 16 is the perfect blend of performance and professionalism. The 4K+ OLED display is breathtaking, and the Intel Core Ultra processor handles my development work effortlessly. The build quality is top-notch, and the battery life is surprisingly good for a laptop with these specs.</p>
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-500">Purchased: Dell XPS 16</p>
+                                <p class="text-sm text-gray-400">Posted on April 22, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 6 -->
+                    <div class="swiper-slide">
+                        <div class="review-card h-full">
+                            <div class="flex items-center mb-4">
+                                <img src="" alt="Customer" class="review-avatar mr-4">
+                                <div>
+                                    <h4 class="font-bold text-primary">Zaheer Ahmed Babar</h4>
+                                    <p class="text-gray-500 text-sm">Verified Buyer</p>
+                                </div>
+                            </div>
+                            <div class="review-stars mb-3 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h5 class="font-bold text-lg mb-2">Ultimate Gaming Experience</h5>
+                            <p class="text-gray-600 mb-4">The MSI Titan GT 18 HX is an absolute monster! And the battle score is 6-0, you all know that</p>
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-500">Purchased: MSI Titan GT 18 HX</p>
+                                <p class="text-sm text-gray-400">Posted on May 10, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next text-primary"></div>
+                <div class="swiper-button-prev text-primary"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Components Section -->
-    <section id="components" class="py-12 bg-gradient-to-br from-primary/5 to-primary/10">
+    <section id="components" class="py-12 bg-gradient-to-br from-gray-50 to-gray-100">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-2 text-primary">PC Components</h2>
             <p class="text-center text-gray-600 mb-8">Build your dream PC with premium parts</p>
@@ -695,7 +948,7 @@
     </section>
 
     <!-- Why Choose Us -->
-    <section class="py-12 bg-gradient-to-br from-gray-50 to-gray-100">
+    <section class="py-12 bg-gradient-to-br from-primary/5 to-primary/10">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-2 text-primary">Why Choose Dihan1.pc</h2>
             <p class="text-center text-gray-600 mb-12">We're committed to providing the best tech shopping experience</p>
@@ -755,6 +1008,101 @@
             </div>
         </div>
     </section>
+
+    <!-- Contact Form Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content p-0 rounded-xl overflow-hidden">
+            <div class="bg-primary text-white p-6">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-xl font-bold">Contact Us</h2>
+                    <button id="closeContactModal" class="text-white hover:text-gray-300 transition-colors duration-300">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <p class="text-gray-600 mb-6">Have questions or need assistance? Fill out the form below and our team will get back to you as soon as possible.</p>
+                
+                <form id="contactForm" class="grid gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" required>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="5" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none resize-none" required></textarea>
+                    </div>
+                    
+                    <div>
+                        <label for="order" class="block text-sm font-medium text-gray-700 mb-1">Order Number (if applicable)</label>
+                        <input type="text" id="order" name="order" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                    </div>
+                    
+                    <div class="mt-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="form-checkbox rounded text-primary focus:ring-primary" required>
+                            <span class="ml-2 text-sm text-gray-600">I agree to the <a href="#" class="text-primary hover:underline">Privacy Policy</a></span>
+                        </label>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors duration-300">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg font-bold mb-2 text-primary">Contact Information</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-2 text-primary"></i>
+                                <span class="text-gray-600">123 Tech Street, Silicon Valley, CA 94043</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-phone-alt mr-2 text-primary"></i>
+                                <span class="text-gray-600">+1 (800) 123-4567</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope mr-2 text-primary"></i>
+                                <span class="text-gray-600">support@dihan1.pc</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2 text-primary">Business Hours</h3>
+                        <ul class="space-y-2">
+                            <li class="flex justify-between">
+                                <span class="text-gray-600">Monday - Friday:</span>
+                                <span class="text-gray-800 font-medium">9:00 AM - 6:00 PM</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-gray-600">Saturday:</span>
+                                <span class="text-gray-800 font-medium">10:00 AM - 4:00 PM</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-gray-600">Sunday:</span>
+                                <span class="text-gray-800 font-medium">Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
@@ -818,7 +1166,7 @@
                         <li><a href="#laptops" class="text-gray-400 hover:text-white transition-colors duration-300">Laptops</a></li>
                         <li><a href="#components" class="text-gray-400 hover:text-white transition-colors duration-300">Components</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a></li>
+                        <li><a href="#" id="footerContactLink" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a></li>
                     </ul>
                 </div>
                 
@@ -872,385 +1220,16 @@
     </footer>
 
     <script>
-        // Product Data
-        const products = [
-            {
-                id: 'legion-pro-7i',
-                name: 'Lenovo Legion Pro 7i (2025)',
-                price: 2549.99,
-                originalPrice: 2999.99,
-                image: 'https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/Lenovo-Legion-Pro-7i-gaming-laptop-RTX-4090-Core-i9.jpg',
-                brand: 'lenovo',
-                specs: {
-                    processor: 'Intel Core i9-14900HX',
-                    graphics: 'NVIDIA GeForce RTX 4090 16GB',
-                    memory: '32GB DDR5-5600MHz',
-                    storage: '2TB PCIe Gen4 SSD',
-                    display: '16" WQXGA 240Hz Mini-LED',
-                    os: 'Windows 11 Pro'
-                },
-                discount: 15
-            },
-            {
-                id: 'legion-7-pro',
-                name: 'Lenovo Legion 7 Pro (2025)',
-                price: 2299.99,
-                originalPrice: 2599.99,
-                image: 'https://microless.com/cdn/products/36de044bb2861aa943fb68ff4463749c-hi.jpg',
-                brand: 'lenovo',
-                specs: {
-                    processor: 'Intel Core i7-14700H',
-                    graphics: 'NVIDIA GeForce RTX 4080 12GB',
-                    memory: '32GB DDR5-5600MHz',
-                    storage: '1TB PCIe Gen4 SSD',
-                    display: '16" WQXGA 165Hz IPS',
-                    os: 'Windows 11 Home'
-                },
-                discount: 12
-            },
-            {
-                id: 'legion-5-pro',
-                name: 'Lenovo Legion 5 Pro (2024)',
-                price: 1699.99,
-                originalPrice: 1899.99,
-                image: 'https://sm.pcmag.com/t/pcmag_au/review/l/lenovo-leg/lenovo-legion-5-pro-gen-7-2022_3ahs.1920.jpg',
-                brand: 'lenovo',
-                specs: {
-                    processor: 'AMD Ryzen 9 8900H',
-                    graphics: 'NVIDIA GeForce RTX 4070 8GB',
-                    memory: '16GB DDR5-5200MHz',
-                    storage: '1TB PCIe Gen4 SSD',
-                    display: '16" WQXGA 165Hz IPS',
-                    os: 'Windows 11 Home'
-                },
-                discount: 10
-            },
-            {
-                id: 'legion-5i-pro',
-                name: 'Lenovo Legion 5i Pro (2024)',
-                price: 1599.99,
-                originalPrice: 1799.99,
-                image: 'https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/17_Legion_Pro_5i_G9_Hero_Front_Angle.jpg',
-                brand: 'lenovo',
-                specs: {
-                    processor: 'Intel Core i7-14700H',
-                    graphics: 'NVIDIA GeForce RTX 4060 8GB',
-                    memory: '16GB DDR5-5200MHz',
-                    storage: '1TB PCIe Gen4 SSD',
-                    display: '16" WQXGA 165Hz IPS',
-                    os: 'Windows 11 Home'
-                },
-                discount: 11
-            },
-            {
-                id: 'legion-9-pro',
-                name: 'Lenovo Legion 9 Pro (2025)',
-                price: 3299.99,
-                originalPrice: 3699.99,
-                image: 'https://m.media-amazon.com/images/I/81x7P1JQHAL.jpg',
-                brand: 'lenovo',
-                specs: {
-                    processor: 'Intel Core i9-14900HX',
-                    graphics: 'NVIDIA GeForce RTX 4090 16GB',
-                    memory: '64GB DDR5-6000MHz',
-                    storage: '4TB PCIe Gen4 SSD',
-                    display: '16" WQXGA 240Hz Mini-LED',
-                    os: 'Windows 11 Pro'
-                },
-                discount: 11
-            },
-            {
-                id: 'ideapad-slim-7',
-                name: 'Lenovo IdeaPad Slim 7 (2024)',
-                price: 1099.99,
-                originalPrice: 1299.99,
-                image: 'https://p4-ofp.static.pub/fes/cms/2021/08/25/splzgzjpi2pneia2a5ncvq1bl6kbkg412823.png',
-                brand: 'lenovo',
-                specs: {
-                    processor: 'AMD Ryzen 7 8800U',
-                    graphics: 'AMD Radeon Graphics',
-                    memory: '16GB LPDDR5X-6400MHz',
-                    storage: '1TB PCIe Gen4 SSD',
-                    display: '14" 2.8K OLED 90Hz',
-                    os: 'Windows 11 Home'
-                },
-                discount: 15
-            },
-            {
-                id: 'thinkpad-x1-carbon',
-                name: 'Lenovo ThinkPad X1 Carbon Gen 12 (2025)',
-                price: 1899.99,
-                originalPrice: 2099.99,
-                image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
-                brand: 'lenovo',
-                specs: {
-                    processor: 'Intel Core Ultra 9 285H',
-                    graphics: 'Intel Arc Graphics',
-                    memory: '32GB LPDDR5X-6400MHz',
-                    storage: '2TB PCIe Gen4 SSD',
-                    display: '14" 2.8K OLED 90Hz',
-                    os: 'Windows 11 Pro'
-                },
-                discount: 10
-            },
-            {
-                id: 'rog-strix-scar-18',
-                name: 'ASUS ROG Strix SCAR 18 (2025)',
-                price: 3199.99,
-                originalPrice: 3499.99,
-                image: 'https://cdn.mos.cms.futurecdn.net/AEYvg9hJbdXFmWL4XKPiHk.jpg',
-                brand: 'asus',
-                specs: {
-                    processor: 'Intel Core i9-14900HX',
-                    graphics: 'NVIDIA GeForce RTX 4090 16GB',
-                    memory: '64GB DDR5-5600MHz',
-                    storage: '4TB PCIe Gen4 SSD',
-                    display: '18" QHD+ 240Hz Mini-LED',
-                    os: 'Windows 11 Pro'
-                },
-                discount: 9
-            },
-            {
-                id: 'rog-zephyrus-g16',
-                name: 'ASUS ROG Zephyrus G16 (2025)',
-                price: 2239.99,
-                originalPrice: 2799.99,
-                image: 'https://www.azernews.az/media/2024/02/29/1704422071559.jpg',
-                brand: 'asus',
-                specs: {
-                    processor: 'AMD Ryzen 9 8950X',
-                    graphics: 'NVIDIA GeForce RTX 4080 12GB',
-                    memory: '32GB DDR5-5600MHz',
-                    storage: '2TB PCIe Gen4 SSD',
-                    display: '16" QHD+ 240Hz OLED',
-                    os: 'Windows 11 Home'
-                },
-                discount: 20
-            },
-            {
-                id: 'rog-strix-g16',
-                name: 'ASUS ROG Strix G16 (2024)',
-                price: 1699.99,
-                originalPrice: 1899.99,
-                image: 'https://www.tmt.my/data/editor/sc-product/15681/800003198_G814J-ZRN6008W.png',
-                brand: 'asus',
-                specs: {
-                    processor: 'Intel Core i9-14900HX',
-                    graphics: 'NVIDIA GeForce RTX 4070 8GB',
-                    memory: '16GB DDR5-5200MHz',
-                    storage: '1TB PCIe Gen4 SSD',
-                    display: '16" QHD+ 165Hz IPS',
-                    os: 'Windows 11 Home'
-                },
-                discount: 11
-            },
-            {
-                id: 'tuf-a16',
-                name: 'ASUS TUF Gaming A16 (2024)',
-                price: 1299.99,
-                originalPrice: 1499.99,
-                image: 'https://www.techlandbd.com/image/cache/catalog/Laptop/ASUS/Tuf/tuf-gaming-a16-advantage-edition/asus-tuf-gaming-a16-advantage-edition-gaming-laptop-800x800.jpg',
-                brand: 'asus',
-                specs: {
-                    processor: 'AMD Ryzen 7 8845HS',
-                    graphics: 'NVIDIA GeForce RTX 4060 8GB',
-                    memory: '16GB DDR5-5200MHz',
-                    storage: '1TB PCIe Gen4 SSD',
-                    display: '16" FHD 165Hz IPS',
-                    os: 'Windows 11 Home'
-                },
-                discount: 13
-            },
-            {
-                id: 'tuf-f16',
-                name: 'ASUS TUF Gaming F16 (2024)',
-                price: 1199.99,
-                originalPrice: 1399.99,
-                image: 'https://pccircle.com/wp-content/uploads/2024/06/02_fx507-min_1_1-600x600.jpg',
-                brand: 'asus',
-                specs: {
-                    processor: 'Intel Core i7-14700H',
-                    graphics: 'NVIDIA GeForce RTX 4050 6GB',
-                    memory: '16GB DDR5-5200MHz',
-                    storage: '512GB PCIe Gen4 SSD',
-                    display: '16" FHD 144Hz IPS',
-                    os: 'Windows 11 Home'
-                },
-                discount: 14
-            },
-            {
-                id: 'zenbook-pro-16',
-                name: 'ASUS Zenbook Pro 16 (2025)',
-                price: 2499.99,
-                originalPrice: 2799.99,
-                image: 'https://dlcdnwebimgs.asus.com/gain/5d00c40b-911c-47d0-9753-8d01494e8478/',
-                brand: 'asus',
-                specs: {
-                    processor: 'Intel Core Ultra 9 285H',
-                    graphics: 'NVIDIA GeForce RTX 4070 8GB',
-                    memory: '32GB LPDDR5X-7500MHz',
-                    storage: '2TB PCIe Gen4 SSD',
-                    display: '16" 3.2K OLED 120Hz',
-                    os: 'Windows 11 Pro'
-                },
-                discount: 11
-            },
-            {
-                id: 'razer-blade-18',
-                name: 'Razer Blade 18 (2025)',
-                price: 3149.99,
-                originalPrice: 3499.99,
-                image: 'https://cdn.wccftech.com/wp-content/uploads/2022/11/Razer-Blade-18-With-Intel-13th-Gen-Core-i9-13900HX-24-Core-5.4-GHz-CPU-_1.png',
-                brand: 'razer',
-                specs: {
-                    processor: 'Intel Core i9-14900HX',
-                    graphics: 'NVIDIA GeForce RTX 4090 16GB',
-                    memory: '64GB DDR5-5600MHz',
-                    storage: '4TB PCIe Gen4 SSD',
-                    display: '18" QHD+ 240Hz Mini-LED',
-                    os: 'Windows 11 Pro'
-                },
-                discount: 10
-            },
-            {
-                id: 'razer-blade-16',
-                name: 'Razer Blade 16 (2025)',
-                price: 2799.99,
-                originalPrice: 3099.99,
-                image: 'https://cdn.mos.cms.futurecdn.net/v2/t:0,l:240,cw:1440,ch:1080,q:80,w:1440/yTyRF5DZECmabRxanCFmV.jpg',
-                brand: 'razer',
-                specs: {
-                    processor: 'Intel Core i9-14900H',
-                    graphics: 'NVIDIA GeForce RTX 4080 12GB',
-                    memory: '32GB DDR5-5600MHz',
-                    storage: '2TB PCIe Gen4 SSD',
-                    display: '16" UHD+ 240Hz Mini-LED',
-                    os: 'Windows 11 Pro'
-                },
-                discount: 10
-            },
-            {
-                id: 'hp-omen-16',
-                name: 'HP OMEN 16 (2025)',
-                price: 1899.99,
-                originalPrice: 2099.99,
-                image: 'https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/HP-Omen-16-Max-2025-Price-in-Nepal.jpg',
-                brand: 'hp',
-                specs: {
-                    processor: 'Intel Core i9-14900H',
-                    graphics: 'NVIDIA GeForce RTX 4070 8GB',
-                    memory: '32GB DDR5-5200MHz',
-                    storage: '2TB PCIe Gen4 SSD',
-                    display: '16" QHD 240Hz IPS',
-                    os: 'Windows 11 Home'
-                },
-                discount: 10
-            },
-            {
-                id: 'hp-victus-16',
-                name: 'HP Victus 16 (2024)',
-                price: 1299.99,
-                originalPrice: 1499.99,
-                image: 'https://computermania.com.bd/wp-content/uploads/2025/01/HP-Victus-16-1-1.gif',
-                brand: 'hp',
-                specs: {
-                    processor: 'AMD Ryzen 7 8845HS',
-                    graphics: 'NVIDIA GeForce RTX 4060 8GB',
-                    memory: '16GB DDR5-5200MHz',
-                    storage: '1TB PCIe Gen4 SSD',
-                    display: '16" FHD 144Hz IPS',
-                    os: 'Windows 11 Home'
-                },
-                discount: 13
-            },
-            {
-                id: 'alienware-m18',
-                name: 'Alienware m18 (2025)',
-                price: 3299.99,
-                originalPrice: 3699.99,
-                image: 'https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc4/Alienware-m18-R2-gaming-laptop-RTX-4090-Core-i9.jpg',
-                brand: 'alienware',
-                specs: {
-                    processor: 'Intel Core i9-14900HX',
-                    graphics: 'NVIDIA GeForce RTX 4090 16GB',
-                    memory: '64GB DDR5-5600MHz',
-                    storage: '4TB PCIe Gen4 SSD',
-                    display: '18" QHD+ 240Hz Mini-LED',
-                    os: 'Windows 11 Pro'
-                },
-                discount: 11
-            },
-            {
-                id: 'alienware-x16',
-                name: 'Alienware x16 (2025)',
-                price: 2799.99,
-                originalPrice: 3099.99,
-                image: 'https://m.media-amazon.com/images/I/61Y4XnOvs-L._AC_UF350,350_QL80_.jpg',
-                brand: 'alienware',
-                specs: {
-                    processor: 'Intel Core i9-14900H',
-                    graphics: 'NVIDIA GeForce RTX 4080 12GB',
-                    memory: '32GB DDR5-5600MHz',
-                    storage: '2TB PCIe Gen4 SSD',
-                    display: '16" QHD+ 240Hz IPS',
-                    os: 'Windows 11 Pro'
-                },
-                discount: 10
-            },
-            {
-                id: 'msi-titan-18',
-                name: 'MSI Titan GT 18 HX (2025)',
-                price: 3499.99,
-                originalPrice: 3899.99,
-                image: 'https://i.extremetech.com/imagery/content-types/043QNe0fJpMqRg4Oyr1LoKX/hero-image.fit_lim.v1704402373.jpg',
-                brand: 'msi',
-                specs: {
-                    processor: 'Intel Core i9-14900HX',
-                    graphics: 'NVIDIA GeForce RTX 4090 16GB',
-                    memory: '64GB DDR5-5600MHz',
-                    storage: '4TB PCIe Gen4 SSD',
-                    display: '18" UHD+ 240Hz Mini-LED',
-                    os: 'Windows 11 Pro'
-                },
-                discount: 10
-            },
-            {
-                id: 'msi-stealth-16',
-                name: 'MSI Stealth 16 AI Studio (2025)',
-                price: 2499.99,
-                originalPrice: 2799.99,
-                image: 'https://m.media-amazon.com/images/I/719mgS0PGNL.jpg',
-                brand: 'msi',
-                specs: {
-                    processor: 'Intel Core Ultra 9 285H',
-                    graphics: 'NVIDIA GeForce RTX 4070 8GB',
-                    memory: '32GB DDR5-6000MHz',
-                    storage: '2TB PCIe Gen4 SSD',
-                    display: '16" UHD+ OLED 120Hz',
-                    os: 'Windows 11 Pro'
-                },
-                discount: 11
-            },
-            {
-                id: 'dell-xps-16',
-                name: 'Dell XPS 16 (2025)',
-                price: 2699.99,
-                originalPrice: 2999.99,
-                image: 'https://sm.pcmag.com/pcmag_uk/photo/default/04x4mxmtbqowi2q7q1e5v6k-8_7ss6.jpg',
-                brand: 'dell',
-                specs: {
-                    processor: 'Intel Core Ultra 9 285H',
-                    graphics: 'NVIDIA GeForce RTX 4070 8GB',
-                    memory: '32GB LPDDR5X-7500MHz',
-                    storage: '2TB PCIe Gen4 SSD',
-                    display: '16" 4K+ OLED 120Hz',
-                    os: 'Windows 11 Pro'
-                },
-                discount: 10
-            }
-        ];
-
-        // Cart functionality
+let products = [];
+fetch('https://raw.githubusercontent.com/dihan-1/dihan1.pc/refs/heads/main/data.json')
+  .then(response => response.json())
+  .then(data => {
+    products = data;
+    renderProducts(); // Make sure renderProducts() is defined after this
+  })
+  .catch(error => {
+    console.error("Failed to fetch products:", error);
+  });
         let cart = [];
         let appliedCoupon = null;
         const coupons = [
@@ -1282,6 +1261,39 @@
                 crossFade: true
             }
         });
+        
+        // Initialize Reviews Slider
+        const reviewSwiper = new Swiper('.review-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            }
+        });
 
         // DOM Elements
         const productsGrid = document.getElementById('productsGrid');
@@ -1305,6 +1317,11 @@
         const scrollIndicator = document.getElementById('scrollIndicator');
         const notification = document.getElementById('notification');
         const notificationMessage = document.getElementById('notificationMessage');
+        const contactLink = document.getElementById('contactLink');
+        const footerContactLink = document.getElementById('footerContactLink');
+        const contactModal = document.getElementById('contactModal');
+        const closeContactModal = document.getElementById('closeContactModal');
+        const contactForm = document.getElementById('contactForm');
 
         // Variables for product display
         let currentCategory = 'all';
@@ -1388,6 +1405,48 @@
                         document.body.classList.remove('page-transition');
                     }, 500);
                 });
+            });
+            
+            // Contact Modal
+            contactLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                contactModal.classList.add('open');
+            });
+            
+            footerContactLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                contactModal.classList.add('open');
+            });
+            
+            closeContactModal.addEventListener('click', () => {
+                contactModal.classList.remove('open');
+            });
+            
+            // Close modal when clicking outside
+            contactModal.addEventListener('click', (e) => {
+                if (e.target === contactModal) {
+                    contactModal.classList.remove('open');
+                }
+            });
+            
+            // Contact Form Submission
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simulate form submission
+                const formData = new FormData(contactForm);
+                const formValues = Object.fromEntries(formData.entries());
+                
+                // Show success message
+                showNotification('Your message has been sent successfully!');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Close modal
+                setTimeout(() => {
+                    contactModal.classList.remove('open');
+                }, 1000);
             });
         }
 
